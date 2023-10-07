@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TODO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+</head>
+<body>
+
+  <main class="flex flex-col gap-4 max-w-3xl mx-auto border border-gray-200 shadow-md px-6 py-10 mt-4 rounded-md">
+
+    <h1 class="text-3xl tex-sky-600 font-bold">Todo LIST</h1>
+    <hr>
+    <section class="flex flex-col gap-1 justify-between ">
+      
+      <label class="text-sm text-gray-400" for="inputTask">Nueva Tarea</label>
+      <div class="flex gap-2">
+        <input name="inputTask" class="flex-1 rounded-md" type="text" id="inputTask" placeholder="Ingrese nueva tarea">
+        <button onclick="addTask()" class="px-2 py-1 bg-sky-300 text-sky-700 rounded-md self-center" >Agregar</button>
+      </div>
+
+    </section>
+
+    <section class="flex justify-between">
+      <div class="flex flex-col">
+        <div class="text-gray-600 font-bold" >Total: <span id="taskTotal"></span></div>
+        <div class="text-green-600 font-bold" >Completadas: 
+          <span id="taskComplete"></span>
+        </div>
+      </div>
+
+      <!-- cabecera -->
+      <div class="flex flex-col w-60">
+        <p class="flex items-center mb-2"> 
+          <span class="w-10 min-w-[3rem] flex-0 px-2" >ID</span> 
+          <span class="flex-1 px-2">Tarea</span>  
+        </p>
+        <hr>
+        <ul id="taskList" class="flex flex-col gap-y-2">
+          
+        </ul>
+
+      </div>
+      
+    </section>
+    
+  </main>
+  <script src="./assets/index.js"></script>
+  
+</body>
+</html>
