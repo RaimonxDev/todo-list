@@ -48,16 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
   rendererTask(); 
 })
 
-
-
-
-
 const addTask = () => {
-  const taskName = inputTask.value; // 'UNDEFINED'
-
-  // if acepta valores TRUTHY TRUE, 1 !== UNDEFINED !== NULL ''
-  // FALSY NULL UNDEFINED 0 '' FALSE
-  
+  const taskName = inputTask.value;
   if (taskName) {
     const newTask = {
       id: generateID(),
@@ -89,11 +81,6 @@ const deleteTask = (id) => {
 }
 
 const rendererTask = () => {
-
-  // let template = '';
-  // tasks.forEach((task) => {
-  //   template += taskTemplate(task)
-  // })
   const taskHTML = tasks.map((task) => {
     return taskTemplate(task)
   }).join('')
@@ -101,7 +88,7 @@ const rendererTask = () => {
   updateTaskCount();
 }
 
-const updateTaskCount = () => {   //TRUE 
+const updateTaskCount = () => {
   taskComplete.textContent = tasks.filter((task) => task.complete).length;
   taskCount.textContent = tasks.length;
 }
